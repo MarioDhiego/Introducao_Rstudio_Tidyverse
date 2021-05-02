@@ -1,5 +1,6 @@
-################# Essencial do Pacote Base do R4.0 #################
-# Pacotes disponÌveis Automaticamente na Vers„o Base do R4.0
+
+################# Essencial do Pacote Base do R4.0 #####################################
+# Pacotes disponiveis Automaticamente na Versao Base do R4.0
 
 # 1) statts
 # 2) graphics
@@ -8,55 +9,60 @@
 # 5) dataset
 # 6) methods
 # 7) base
-###################################################################
+########################################################################################
 
 
-################# Divi„o dos Pacotes do R4.0 #######################
+################# Divisao dos Pacotes do software R4.0 #######################
 
-# 1) base         : funÁıes b·sicas e preinstaladas e carregadas
-# 2) recommended  : funÁıes instaladas mas n„o carregadas, 
-#                   Necess·rio usar o comando libray()
-# 3) contributed  : pacotes que n„o s„o instalados automaticamente 
+# 1) base         : funcoes basicas e preinstaladas e carregadas
+# 2) recommended  : funcoes instaladas mas nao carregadas, 
+#                   Necessario usar o comando libray()
+# 3) contributed  : pacotes que nao sao instalados automaticamente 
 #                   usa o comando install.package()
-####################################################################
+##############################################################################
 
 
-# Instalar Pacotes contributed
+###############################################################################
+###### Instalar Pacotes contributed
 
 # Instalar um Pacote
 install.packages("tidyverse")
 
-# Instalar v·rios PAcotes
+# Instalar varios PAcotes
 install.packages(c("data.table","janitor","DescTools","devtools",
                    "rmarkdown","knitr","tidyvere"))
-
 
 # Ativar Pacotes
 library(tidyverse)
 
 # Desativar Pacotes
 detach("package:tidyverse", unload = TRUE)
-
-############### Conjunto de Pacote tidyverse #####################
-# 1) readr:   vers„o 1.4.0 => importaÁ„o e leitura de arquivos de dados
-# 2) dplyr:   vers„o 1.0.5 => manipulaÁ„o de dataframes
-# 3) tidyr:   vers„o 1.1.3 => organizaÁ„o de dataframe
-# 4) ggplot2: vers„p 3.3.3 => visualizaÁ„o de dados, produÁ„o de gr·ficos
-# 5) tibble:  vers„o 3.1.0 => estruturaÁ„o de dados  
-# 6) purr:    vers„o 0.3.4 => manipulaÁ„o de vetores e listas
-# 7) forcats: vers„o 0.5.1 => manipulaÁ„o de dados categÛricos
-# 8) stringr: vers„o 1.4.0 => manipulaÁ„o de string
-##################################################################
+##################################################################################
 
 
-################ OPeraÁıes Matem·ticas do pacote base #############
-# CriaÁ„o de Vetores
+
+############### Conjunto de Pacote tidyverse ######################################
+# 1) readr:   versao 1.4.0 => importacao e leitura de arquivos de dados
+# 2) dplyr:   versao 1.0.5 => manipulacao de dataframes
+# 3) tidyr:   versao 1.1.3 => organizacao de dataframe
+# 4) ggplot2: versap 3.3.3 => visualizacao de dados, producao de graficos
+# 5) tibble:  versao 3.1.0 => estruturacao de dados  
+# 6) purr:    versao 0.3.4 => manipulacao de vetores e listas
+# 7) forcats: versao 0.5.1 => manipulacao de dados categoricos
+# 8) stringr: versao 1.4.0 => manipulacao de string
+# 9) magrittr: versao 1.4.0 => operador pipe
+#######################################################################################
+
+
+################ OPeracoes Matematicas do pacote base ##################################
+# Cria√ß√£o de Vetores
 x <- c(1,2,2)
 y <- c(0.5,1,1)
 z <- c(0.5,1,1)
 
+soma <- x+y+z
 
-# CriaÁ„o de Matrizes
+# Criacao de Matrizes
 # 1) por coluna
 matriz1 <- cbind(x,y,z)
 
@@ -68,14 +74,16 @@ tabela <- data.frame(x,y,z)
 View(tabela)
 
 # estrutura do objeto
-str(matriz)
+str(matriz1)
 
 
-# FunÁıes EstatÌstica B·sicas
-# coeficiente de correlaÁ„o
-cor(x,y,) 
+# Funcoes Estatistica Basicas
+# coeficiente de correlacao
+cor(x,y) 
+cor(x,z)
+cor(y,z)
 
-# MÈdia simples
+# Media simples
 mean(x)
 mean(y)
 mean(z)
@@ -94,16 +102,13 @@ sum(x)
 sum(y)
 sum(z)
 
-# vari‚ncia
+# variancia
 var(x)
 var(y)
 var(z)
 var(x,y)
+
 ################################################################################################
-
-
-
-
 ################# Leitura de banco de Dados ##################################################
 
 # O Rstudio inclui recursos para importar dados de arquivos do tipo:
@@ -117,26 +122,26 @@ var(x,y)
 # 7) stata => ler arquivo do tipo STATA
 
 
-# A opÁ„o From Text(readr) permite ler arquivos do tipo csv (separado por virgula)
-# 1) No prÛprio Computador 
+# A op??oo From Text(readr) permite ler arquivos do tipo csv (separado por virgula)
+# 1) No proprio Computador 
 # 2) Como estar hospedado em uma URL
 
-# No R4.0 o separador decimal padr„o È o ponto.
-# Para saber qual È o separador, basta abrir o arquivo em um bloco de notas
+# No R4.0 o separador decimal padr?o ? o ponto.
+# Para saber qual ? o separador, basta abrir o arquivo em um bloco de notas
 
 
 #Primeiro Link
 # http://raw.githubusercontent.com/Lucianea/Alta/master/vendas.csv
-# No primeiro link, os dados est„o separados por ponto e vÌrgula + seprarador decimal:vÌrgula
+# No primeiro link, os dados est?o separados por ponto e v?rgula + seprarador decimal:v?rgula
 
 #Segundo Link
 # http://raw.githubusercontent.com/Lucianea/Alta/master/vendas1.csv
-# No segundo link, os dados est„o separados por vÌrgula + seprarador decimal:ponto.
+# No segundo link, os dados est?o separados por v?rgula + seprarador decimal:ponto.
 
 
-# O comando read.csv ou read.cvs2 s„o funÁıes nativas do R
-# separador ponto e vÌrgula: read.csv2
-# separador vÌrgula: read.csv
+# O comando read.csv ou read.cvs2 sao fun?oes nativas do R, n?o precisam de nenhum pacote.
+# separador ponto e virgula: read.csv2
+# separador virrgula: read.csv
 
 
 # Leitura de Banco de Dados via URL
@@ -149,56 +154,244 @@ Vendas_B = read.csv("http://raw.githubusercontent.com/Lucianea/Alta/master/venda
 # Visualizar as 6 primeiras linhas
 head(Vendas_A)
 View(Vendas_A)
-#########################################################################
+################################################################################################
 
 
-####### ManipulaÁ„o de Dados com o sistema tidyverse ##################
-# Pacotes magrittr + dplyr
 
+
+####### Manipulacao de Dados com a Familia de Pacotes tidyverse #######################################
+####### Pacote magrittr
 library(magrittr)
+
+# O operador Pipe foi criado por Stefan Miltron Bache no pacote magrittr.
+# Funciona como uma fun??o composta, tornando a leitura da linha de comando mais l?gica e natural.
+
+# Trata-se de um operador cuja nota??o e dada por: %>%
+# Tecla de atalho ? ctrl+shift+M
+##################################################################################
+
+
+##################################################################################
+###### Pacote dplyr ##############################################################
 library(dplyr)
 
-# Selecionar 3 colunas de vari·veis
-# comando select
+# Neste pacote temos dispon?vel as seguintes fun??es:
+# 1) select()     : extrai colunas de uma tabela na forma de tabela
+# 2) pull()       : extrai uma coluna de uma tabela na forma de vetor
+# 3) filter()     : filtra linhas
+# 4) distinct()   : remove as linhas com valores repetidos
+# 5) arrange()    : reordena ou combina linhas
+# 6) mutate()     : cria novas colunas no banco original
+# 7) summarize()  : sumariza valores
+# 8) group_by()   : opera??es por grupos
+# 9) add_column() : adiciona novas colunas
+# 10) add_row()   : adiciona novas linhas
+# 11) rename()    : renomeia uma coluna
+##################################################################################
+
+
+####### Comando select ############################################################
+# Selecionar 3 colunas de variAveis
+
 Vendas_A %>%
   dplyr:: select(filial, quinzena, valor_compra) 
 
+Vendas_B %>%
+  dplyr:: select(quinzena, filial, n_itens) 
+################################################################################
 
-# Filtrar a filial A 
-# comando filter
+
+####### Comando pull ############################################################
+# extrair uma coluna de uma tabela de dados na forma de vetor
+
+vetor = Vendas_A %>%
+  dplyr:: pull(filial)
+##################################################################################
+
+   
+
+####### Comando filter ############################################################
+## Filtrar a filial A 
+
 Vendas_A %>%
   dplyr:: filter(filial == "A")
 
 
-# Filtrar a filial A OU n_iten igual a 1
+## Filtrar a filial A OU n_iten igual a 1
 Vendas_A %>%
   dplyr:: filter(filial == "A" | n_itens == 1)
 
-# Filtrar a filial B E quinzena 2
+
+## Filtrar a filial B E quinzena 2
 Vendas_A %>%
   dplyr:: filter(filial == "B" & quinzena == 2)
+###################################################################################
 
-# Organizar os dados de forma crescente
-# comando arrange
 
-# crescente
+####### Comando arrange ############################################################
+## Organizar os dados de forma crescente
+
 Vendas_A %>%
   dplyr:: arrange(n_itens)
 
-# Decrescente
+## Decrescente
 Vendas_A %>%
   dplyr:: arrange(desc(n_itens))
 
 
-# Decrescente de n_itens E ordema alfabÈtica de filial
+## Decrescente de n_itens E ordema alfabetica de filial
 
 Vendas_A %>%
   dplyr:: arrange(-n_itens) %>%
   dplyr:: arrange(filial)
 
-# decrescente de n_itens e ao mesmo tempo ordem alfabetica de filial
+## decrescente de n_itens e ao mesmo tempo ordem alfabetica de filial
 Vendas_A %>%
   dplyr:: arrange(-n_itens, filial) 
+
+####### Comando distinct ############################################################
+## Extrair as linhas distintas para filial
+
+Vendas_A %>%
+  dplyr:: distinct(filial)
+
+Vendas_B %>%
+  dplyr:: distinct(filial, desconto_perc)
+####################################################################################
+
+
+
+####### Comando mutate  ############################################################
+## Calcular o valor m?dio (VM), criando uma nova coluna
+Vendas_A %>%
+  dplyr:: mutate(VM = valor_compra/n_itens) 
+
+
+## Arredondamento
+Vendas_A %>%
+  dplyr:: mutate(VM = round(valor_compra/n_itens, 2)) %>%
+  dplyr:: select(filial, valor_compra, n_itens, VM) %>%
+  dplyr:: arrange(VM)
+
+# o mutate acrescenta novas colunas aos dados originais, ja o transmute cria novas colunas apartir dos dados
+#################################################################################################
+
+
+
+####### Comando summarise  ############################################################
+#numero de observacoes da base de dados 
+Vendas_A %>%
+  dplyr:: summarise(contagem=n())
+
+# numero de filiais distintas
+Vendas_A %>%
+  dplyr:: select(filial) %>%
+  dplyr:: summarise(filial_distintas = n_distinct(filial)) 
+  
+# numero de cupons distinto da filial B
+Vendas_A %>%
+  dplyr:: select(filial, cupom) %>%
+  dplyr:: filter(filial == "B") %>%
+  dplyr:: summarise(cupons_distintos = n_distinct(cupom))
+#####################################################################################
+
+
+####### Comando group_by  ############################################################
+#numero de cupons distintos p/ filial 
+
+Vendas_A %>%
+group_by(filial) %>%
+  summarise(cupons_distintos = n_distinct(cupom))
+
+# total de compras p/ filial
+Vendas_A %>%
+  group_by(filial) %>%
+  summarise(compra_total = sum(valor_compra))
+
+
+# total de itens p/ filial
+Vendas_A %>%
+  group_by(filial) %>%
+  summarize(item_total = sum(n_itens))
+
+
+# sumarizar informa??es em + de um grupo em + colunas
+Vendas_A %>%
+  group_by(filial) %>%
+  summarize(
+    cupons_distintos = n_distinct(cupom),
+    item_total = sum(n_itens),
+    compra_total = sum(valor_compra))
+
+# Media, Desvio-padrao, Minimo e Maximo
+
+Vendas_A %>%
+  group_by(filial) %>%
+  summarize(Media = mean(valor_compra) %>%
+            round(2),
+            Desvio = sd(valor_compra) %>%
+            round(2), 
+            Minimo = min(valor_compra) %>%
+            round(2),
+            Maximo = max(valor_compra) %>%
+            round(2))
+
+
+Vendas_A %>%
+  group_by(quinzena) %>%
+  summarize(Media = mean(valor_compra) %>%
+              round(2),
+            Mediana = median(valor_compra) %>%
+              round(2),
+            Desvio = sd(valor_compra) %>%
+              round(2), 
+            Minimo = min(valor_compra) %>%
+              round(2),
+            Maximo = max(valor_compra) %>%
+              round(2))
+#################################################################################################
+
+
+####### Exercicio Pratico Geral  ################################################################
+
+# Utilizar o banco Vendas_A
+# 1) ordenar os dados pelo n_itens e valor_compra
+# 2) filtrar valor_compra maior q 150
+# 3) exibe a selecao com filial no inicio
+# 4) cria a variavel valor Medio VM: valor_compra/n_itens)
+# 5) arrendamanento pra uma casa decimal de VM
+# 6) selecionar filial, n_itens, valor_compra e VM no final
+# 7) agrupar por filial
+# 8) calcular media, mediana, desvio, minimo e maximo
+
+################################################################################################
+
+###### Script ##################################################################################
+Vendas_A %>%
+  dplyr:: arrange(n_itens, valor_compra) %>%
+  dplyr:: filter(valor_compra > 150) %>%
+  dplyr:: select(filial, n_itens,valor_compra) %>%
+  dplyr:: mutate(VM = valor_compra/n_itens) %>%
+  dplyr:: mutate(VM = round(valor_compra/n_itens, 1)) %>%
+  dplyr:: select(filial, n_itens, valor_compra, VM) 
+
+Vendas_A %>%
+  dplyr:: group_by(filial) %>%
+  dplyr:: summarize(Media = mean(valor_compra) %>%
+              round(2),
+            Mediana = median(valor_compra) %>%
+              round(2),
+            Desvio = sd(valor_compra) %>%
+              round(2), 
+            Minimo = min(valor_compra) %>%
+              round(2),
+            Maximo = max(valor_compra) %>%
+              round(2))
+##########################################################################################
+
+
+
+
 
 
 
